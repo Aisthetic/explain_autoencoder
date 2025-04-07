@@ -18,6 +18,16 @@ near Zurich Airport. High attention regions indicate areas prioritized by the ne
 
 *Figure: Interactive brushing tool to explore the latent space of VAEs*
 
+## 📚 Table of Contents
+
+- [About the Project](#-about-the-project)
+- [Citation](#-citation)
+- [Getting Started](#-getting-started)
+- [Repository Structure](#-repository-structure)
+- [Datasets](#-datasets)
+- [Pretrained Models](#-pretrained-models)
+
+
 ## 🧠 About the Project
 
 This repository provides the official code and pretrained models for the paper:  
@@ -126,20 +136,27 @@ Each folder contains reproducible Jupyter notebooks for generating figures and v
 
 ---
 
-### `data/`
+## 📂 Datasets
+
+This repository supports experiments on three distinct time series datasets. Each dataset is stored under the `data/` directory and is preprocessed for direct use in the experiments.
+
+| Dataset Name     | Folder Path         | Description                                                                 |
+|------------------|---------------------|-----------------------------------------------------------------------------|
+| **Symbols**      | `data/symbols/`     | Handwriting gesture data (e.g., `(`, `)`, `Ω`) represented as pen trajectories. |
+| **EOG (EEG)**     | `data/eog/`         | Eye movement and EEG signal time series from physiological recordings.      |
+| **Aircraft**      | `data/aircraft/`    | Real-world aircraft trajectories from general flight tracking.              |
+| **Flyover**       | `data/aircraft_flyover/` | Filtered landing segments near Zurich Airport, grouped by direction (East, West, South). |
+
+### 📸 Dataset Samples
 
 ![Symbols Dataset](paper_figures/symbols/dataset.png)  
-![Symbols Dataset](paper_figures/eog/dataset.png)  
-![Symbols Dataset](paper_figures/lszh/dataset.png)  
+*Symbols dataset: Handwriting gestures visualized as trajectories.*
 
+![EOG Dataset](paper_figures/eog/dataset.png)  
+*EOG dataset: Eye movement signals plotted over time.*
 
-Organized input datasets used throughout the experiments:
-- `symbols/`: Handwriting gestures.
-- `eog/`: EEG signals.
-- `aircraft/` and `aircraft_flyover/`: Real-world aircraft trajectory data.
-
-Ensure the datasets are downloaded or preprocessed into these folders before running the notebooks.
----
+![LSZH Dataset](paper_figures/lszh/dataset.png)  
+*Aircraft Flyover dataset: Arrival trajectories near LSZH Airport.*
 
 ### `deep_traffic_generation/`
 This folder contains components adapted from [deep-traffic-generation](https://github.com/kruuZHAW/deep-traffic-generation-paper).  
